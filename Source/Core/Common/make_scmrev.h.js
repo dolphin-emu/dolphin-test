@@ -88,6 +88,12 @@ if (default_update_track == "%DOLPHIN_DEFAULT_UPDATE_TRACK%") default_update_tra
 // remove hash (and trailing "-0" if needed) from description
 describe = describe.replace(/(-0)?-[^-]+(-dirty)?$/, '$2');
 
+// set commits ahead to zero if on a tag
+if (branch.search(/^heads\/refs\/tags/) !== -1)
+{
+  commits_ahead = "0";
+}
+
 var out_contents =
 	"#define SCM_REV_STR \"" + revision + "\"\n" +
 	"#define SCM_DESC_STR \"" + describe + "\"\n" +
