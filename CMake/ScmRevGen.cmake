@@ -27,10 +27,11 @@ endif()
 # version number
 set(DOLPHIN_VERSION_MAJOR "2407")
 set(DOLPHIN_VERSION_MINOR "0")
-if(DOLPHIN_WC_BRANCH STREQUAL "stable")
+set(DOLPHIN_VERSION_PATCH ${DOLPHIN_WC_REVISION})
+
+if(DOLPHIN_WC_BRANCH MATCHES "^heads/refs/tags")
   set(DOLPHIN_VERSION_PATCH "0")
-else()
-  set(DOLPHIN_VERSION_PATCH ${DOLPHIN_WC_REVISION})
+  set(DOLPHIN_WC_COMMITS_AHEAD_MASTER 0)
 endif()
 
 # If Dolphin is not built from a Git repository, default the version info to
