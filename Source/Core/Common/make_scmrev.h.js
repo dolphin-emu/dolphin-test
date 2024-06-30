@@ -64,7 +64,12 @@ function AttemptToExecuteCommand(cmd)
 {
 	try
 	{
-		return wshShell.Exec(cmd).ExitCode;
+		var exec = wshShell.Exec(cmd)
+
+		// wait until the command has finished
+		while (exec.Status == 0) {}
+
+		return exec.ExitCode;
 	}
 	catch (e)
 	{
