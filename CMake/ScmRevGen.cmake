@@ -31,8 +31,8 @@ if(GIT_FOUND)
 endif()
 
 # version number
-set(DOLPHIN_VERSION_MAJOR "5")
-set(DOLPHIN_VERSION_MINOR "0")
+set(DOLPHIN_VERSION_MAJOR "2407")
+set(DOLPHIN_VERSION_MINOR "5s")
 set(DOLPHIN_VERSION_PATCH ${DOLPHIN_WC_REVISION})
 
 # If Dolphin is not built from a Git repository, default the version info to
